@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+      
+        <h1>Signup</h1>
+        <form action='/signup' method='post'>
+
+          <div>
+
+            <lable>Username:<br>
+              <input  type='text' name='username' placeholder='Enter Username' value='{{username}}' />
+            </lable>
+                      
+            <lable>Password:<br>
+              <input type='password' name='password' placeholder="Enter Password" value='{{password}}'/>
+            </lable>
+            
+            <lable>Password Verify:<br>
+              <input type='password' name='verify' placeholder="Repeat Password" value='{{verify}}' /> 
+            </lable>
+                    
+            <input class="button" type='submit' value='Signup'/>
+
+          </div>
+
+        </form>
+{% endblock %}

@@ -2,9 +2,10 @@
 
 {% block content %}
 
-    <h1>{{entry.title}}</h1>
+    <h1>{{post.title}}</h1>
 
-    <p>{{entry.body}}</p>
-        
+    <p>{{post.body}}</p>
+
+    <p><small>written by <a href="/blog?user={{post.owner_id}}">{{post.owner.username}}</a> on {{post.post_date}} UTC</small></p>          
 
 {% endblock %}

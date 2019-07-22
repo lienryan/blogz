@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class='member'>
+  <h2>All members</h2>
+
+  {% for user in users %}
+
+    <ul>
+    
+      <p><a class='member' href="/blog?user={{user.id}}">{{user.username}}</a><p>
+
+    </ul>
+  {% endfor %}  
+   
+  <video autoplay='autoplay' muted='muted'>
+    <source src="/static/fall.mp4" type="video/mp4">
+  </video>
+</div>
+
+{% endblock %}

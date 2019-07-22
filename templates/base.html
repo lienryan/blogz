@@ -5,20 +5,39 @@
 <head>
 
     <title>{{title}}</title>
-    <link rel="stylesheet" type= "text/css" href="{{url_for('static',filename='styles.css') }}">
+    <link rel="stylesheet" href="/static/styles.css">
 
 </head>
 
 <body>
 
-    <nav>
+    <title>Blogz</title>
+    <img src="/static/beach.jpg" >
+    
+      <nav>
+        <li><a id='active'  href="/">Home</a></li>
+        <li><a  href="/blog">Main Blog Page</a></li>
+        <li><a   href="/newpost">Add a Blog Entry</a></li>
+        <li  style="float:right" ><a href="/login">Login</a></li>
+        <li  style="float:right" ><a href="/logout">Logout</a></li>
+      
+      </nav>  
 
-        <a href="/blog">Main Blog Page</a> | 
+      
+    {% with messages = get_flashed_messages(with_categories=True) %}
+    
+      <ul>
 
-        <a href="/newpost">Add a Blog Entry</a>
+      {% for category, message in messages %}
 
-    </nav>
+        <li class="{{category}}">{{message}}</li>
 
+      {% endfor %}
+
+      </ul>
+   
+    {% endwith %}
+    
 
     {% block content %}
 
@@ -26,5 +45,6 @@
 
 
 </body>
+
 
 </html>

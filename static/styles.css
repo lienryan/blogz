@@ -1,61 +1,139 @@
   
-nav a {
-  
-    background-color: lightgreen;
-  
-    border-radius:2px;
-  
-    border:none;
-  
-    color: darkblue;
-  
-    cursor: pointer;
-  
-    display:block;
-  
-    font-size: 85%;
-  
-    margin-bottom: 1rem;
-  
-    padding: .5rem;
-  
+
+nav {
+    list-style-type: none;
+    margin-right: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
 }
   
-
-
+li{
+    float: left;
+    border-right:1px solid #bbb;
+}
   
-input {
+li:last-child {
+    border-right: none;
+}
   
+li a {
     display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
   
-    font-size: 100%;
-  
-    margin: 1rem;
-  
+li a:hover:not(#active) {
+    background-color:gray;
 }
   
+li a#active {
+    background-color: #4CAF50;
+}
+
+li a.user {
+    color:black;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
   
+}
+
+div {
+    font-size: 1.2em;
+    background-color:lightgrey;
+    width: 700px;
+    padding:20px;
+    margin-left: auto;
+    margin-right:auto;
+}
   
+input, textarea {
+    width: 60%;
+    padding: 10px;
+    margin: 20px 100px;
+    resize: none;    
+    display: inline-block;
+    background: #f1f1f1;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+}
+
 textarea {
-  
-    display: block;
-  
-    font-size: 100%;
-  
-    margin: 1rem;
-  
+    overflow: scroll;
+    height: 200px;
+    
 }
-  
-  
+ 
   
   
 h1{
     text-align: center;
+    color:blue;
+    margin-top:50px;
+   
 }
 
+h2 {
+    margin-top:50px;
+}
+
+p {
+    font-size: 20px;
+}
+
+div.ul {
+    background-color: none;
+}
 .error{
     color: red;
+    text-align: center;
+    font-size: 20px;
+    
+   
     
 }
+.button {
+    display: inline-block;
+    font-size: 18px;
+    padding: 15px 25px;
+    color:white;
+    background-color: green;
+    border:none;
+    border-radius:15px;
+    box-shadow: 0 9px #999;
+    width: 200px;
+    margin: 50px 0 0 500px;
+    
+            
+}
+.button:hover {background-color: #3e8e41}
+
+            
+.button:active {
+    background-color:hotpink;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+
+img {
+    width: 100%;
+    height: auto;
+  } 
+
   
-  
+video {
+    width: 100%;
+    height: auto;
+      
+}
+div.member {
+    text-align: center;
+}
+
