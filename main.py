@@ -8,6 +8,7 @@ from datetime import datetime
 
 
 
+
 app = Flask(__name__)
 
 app.config['DEBUG'] = True
@@ -172,39 +173,6 @@ def new_post():
     return render_template('newpost.html', header='New Blog Entry')
 
 
-
-@app.route('/login', methods=['POST', 'GET'])
-
-def login():
-
-    if request.method =='POST':
-
-        username = request.form['username']
-
-        password = request.form['password']
-
-
-
-        user = User.query.filter_by(username=username).first()      
-
-        if user and user.password == password:                      
-
-            session['username'] = username
-
-            flash('Welcome ' + username, 'error')
-
-            return redirect('/newpost')
-
-        else:
-
-            flash('User password is incorrect, or user does not exist', 'error')
-
-    
-
-    return render_template('login.html', header='Login')
-
-
-
 @app.route('/signup', methods=['POST', 'GET'])
 
 def signup():
@@ -258,10 +226,44 @@ def signup():
 
 
 
+@app.route('/login', methods=['POST', 'GET'])
+
+def login():
+
+    if request.method =='POST':
+
+        username = request.form['username']
+
+        password = request.form['password']
+
+
+
+        user = User.query.filter_by(username=username).first()      
+
+        if user and user.password == password:  
+                          
+
+            session['username'] = username
+
+            flash('Welcome ' + username, 'error')
+
+            return redirect('/newpost')
+
+        else:
+
+            flash('User password is incorrect, or user does not exist', 'error')
+
+    
+
+    return render_template('login.html', header='Login')
+
+
+
+
 @app.route('/logout')
 
 def logout():
-
+    
     del session['username']
 
     flash('You logged out. See you again!','error')

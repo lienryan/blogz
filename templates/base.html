@@ -14,14 +14,25 @@
     <title>Blogz</title>
     <img src="/static/beach.jpg" >
     
-      <nav>
-        <li><a id='active'  href="/">Home</a></li>
-        <li><a  href="/blog">Main Blog Page</a></li>
-        <li><a   href="/newpost">Add a Blog Entry</a></li>
-        <li  style="float:right" ><a href="/login">Login</a></li>
-        <li  style="float:right" ><a href="/logout">Logout</a></li>
+    <nav>
+       
+            <li><a id='active'  href="/">Home</a></li>
+            <li><a  href="/blog">All Blogs</a></li>
+            <li><a  href="/newpost">Add a New Blog</a></li>
+
+        {% if "username" in session %}
+           
+            <li style="float:right"><a href="/logout">Log Out</a></li>
+            
+        {% else %}
+         
+            <li style="float:right"><a href="/login">Log In</a></li>
+            <li style="float:right"><a href="/singup">Sign Up</a></li>
+          
+
+        {% endif%}
       
-      </nav>  
+    </nav>  
 
       
     {% with messages = get_flashed_messages(with_categories=True) %}
